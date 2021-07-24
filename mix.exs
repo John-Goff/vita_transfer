@@ -5,9 +5,10 @@ defmodule VitaTransfer.MixProject do
     [
       app: :vita_transfer,
       version: "0.1.0",
-      elixir: "~> 1.11",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      escript: escript()
     ]
   end
 
@@ -16,6 +17,10 @@ defmodule VitaTransfer.MixProject do
     [
       extra_applications: [:logger]
     ]
+  end
+
+  defp escript do
+    [main_module: VitaTransfer]
   end
 
   # Run "mix help deps" to learn about dependencies.
