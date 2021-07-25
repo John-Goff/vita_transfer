@@ -18,7 +18,7 @@ defmodule VitaTransfer.FTP do
   end
 
   def _file_with_sav(%{game: game_name}) do
-    base_name = Path.basename(game_name)
+    base_name = Path.rootname(game_name)
     String.to_charlist(base_name) ++ '.sav'
   end
 end
