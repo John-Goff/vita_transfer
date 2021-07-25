@@ -2,6 +2,7 @@ defmodule VitaTransfer do
   @moduledoc """
   Documentation for `VitaTransfer`.
   """
+  alias VitaTransfer.Convert
   alias VitaTransfer.FTP
 
   @doc """
