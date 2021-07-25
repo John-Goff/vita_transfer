@@ -14,10 +14,18 @@ defmodule VitaTransfer do
 
   """
   def main(args \\ []) do
-    args
-    |> _parse_args()
-    |> _validate_from_to()
-    |> FTP.transfer_save()
+    options =
+      args
+      |> _parse_args()
+      |> _validate_from_to()
+
+    if options.to do
+      Convert.convert_save(options)
+      FTP.transfer_save(options)
+    else
+      FTP.transfer_save(options)
+      Convert.convert_save(options)
+    end
   end
 
   defp _parse_args(args) do
