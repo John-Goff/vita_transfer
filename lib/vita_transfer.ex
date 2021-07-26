@@ -20,13 +20,15 @@ defmodule VitaTransfer do
       |> _parse_args()
       |> _validate_from_to()
 
-    if options.to do
+    if options[:to] do
       Convert.convert_save(options)
       FTP.transfer_save(options)
     else
       FTP.transfer_save(options)
       Convert.convert_save(options)
     end
+
+    IO.puts("Done!")
   end
 
   defp _parse_args(args) do

@@ -1,11 +1,13 @@
 defmodule VitaTransfer.FTP do
   def transfer_save(%{from: true} = options) do
     pid = _connect(options)
+    IO.puts("Receiving file")
     :ftp.recv(pid, _file_with_sav(options))
   end
 
   def transfer_save(%{to: true} = options) do
     pid = _connect(options)
+    IO.puts("Sending file")
     :ftp.send(pid, _file_with_sav(options))
   end
 
