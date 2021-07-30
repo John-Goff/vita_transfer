@@ -6,12 +6,12 @@ defmodule VitaTransfer do
   alias VitaTransfer.FTP
 
   @doc """
-  Hello world.
+  Run the main transfer function.
 
   ## Examples
 
-      iex> VitaTransfer.hello()
-      :world
+      iex> VitaTransfer.main()
+      :ok
 
   """
   def main(args \\ []) do
