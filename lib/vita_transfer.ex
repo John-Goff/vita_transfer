@@ -28,6 +28,10 @@ defmodule VitaTransfer do
       Convert.convert_save(options)
     end
 
+    IO.puts("Deleting .sav")
+    base_name = Path.rootname(options.game_name)
+    File.rm("#{base_name}.sav")
+
     IO.puts("Done!")
   end
 
