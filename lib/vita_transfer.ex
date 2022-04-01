@@ -29,7 +29,7 @@ defmodule VitaTransfer do
     end
 
     IO.puts("Deleting .sav")
-    base_name = Path.rootname(options.game_name)
+    base_name = Path.rootname(options.game)
     File.rm("#{base_name}.sav")
 
     IO.puts("Done!")
